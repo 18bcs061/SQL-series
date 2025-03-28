@@ -1,0 +1,4 @@
+USE sql_store; -- This is used to select the database when we will run this query then It will automatically select the database which is defined here
+SELECT *
+FROM customers
+order by first_name -- This is used here to sort the rows with column first_name

@@ -1,0 +1,14 @@
+SELECT LENGTH('SKY');
+SELECT UPPER('SKY');
+SELECT lower('Ssky');
+SELECT ltrim('  sky');
+SELECT rtrim('SKY     ');
+SELECT rtrim('   SKY     ');
+SELECT LEFT('kindergarten' ,4);-- It will retun the first 4 char
+SELECT RIGHT('kindergarten' ,6);-- It will retun the 6 char from right
+SELECT substring('kindergarten' ,3 ,6);-- It will retun the SUBSTR start from index
+-- 3 and till 6 , index will start from1 char from right
+SELECT LOCATE('n' , 'kindergarten');-- It will retun the index of char
+SELECT LOCATE('garten' , 'kindergarten');-- It will retun the index of char
+SELECT REPLACE('kindergarten' , 'garten' , 'garden');-- It will retun the index of char
+SELECT CONCAT('first', 'last');

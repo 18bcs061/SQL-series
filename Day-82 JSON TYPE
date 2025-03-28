@@ -1,0 +1,59 @@
+
+-- This is the first way to add the json data 
+update products
+SET properties = '
+{
+	"dimension" : [1,2,3],
+    "weight":10,
+    "manufacturer":{"name":"sony"}
+}
+'
+where product_id = 1;
+
+-- This is the second way to add the json data 
+update products
+SET properties = json_object(
+	"dimension" , json_array(1,2,3),
+    "weight",10,
+    "manufacturer",json_object("name","sony")
+    )
+where product_id = 1;
+
+-- This is the way to get any specific field from the json data 
+SELECT product_id , JSON_EXTRACT(properties , '$.weight')
+FROM products
+where product_id = 1;
+
+-- This is the way to get any specific field from the json data 
+SELECT product_id , properties -> '$.dimensions[0]'
+FROM products
+where product_id = 1;
+
+-- This is the way to get any specific field from the json data 
+SELECT product_id , properties -> '$.manufacturer.name'
+FROM products
+where product_id = 1;
+
+-- This is the way to get any specific field from the json data and where condition
+SELECT product_id , properties ->> '$.manufacturer.name'
+FROM products
+where  properties ->> '$.manufacturer.name' = 'sony';
+
+-- This is the way to update any specific field in the json data 
+UPDATE products
+SET properties = JSON_SET(
+   properties,
+   '$.weight' , 20,
+   '$.age',10
+)
+where product_id =1;
+
+-- This is the way to remove any specific field from the json data 
+UPDATE products
+SET properties = JSON_REMOVE(
+   properties,
+   '$.age'
+)
+where product_id =1
+
+

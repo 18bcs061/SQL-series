@@ -1,0 +1,8 @@
+SELECT 
+	client_id,
+    SUM(invoice_total) AS total_sales,
+    COUNT(*) AS number_of_invoices
+FROM invoices
+-- WHERE total_sales > 500 AND number_of_invoices > 5 if we will apply the where clause here like this then we will get the error i.e total_sales col does not exists
+group by client_id
+HAVING total_sales > 500 AND number_of_invoices > 5 -- we can use the where clause but as we know where clause only works on those column which are really exists in the Database

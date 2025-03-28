@@ -1,0 +1,4 @@
+SELECT *
+FROM orders o , customers c
+WHERE o.customer_id = c.customer_id
+-- if we forget to put the where clause here then it will perform the cross join

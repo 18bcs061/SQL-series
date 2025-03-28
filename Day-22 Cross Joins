@@ -1,0 +1,13 @@
+SELECT
+	o.order_id,
+    c.first_name
+FROM orders o 
+CROSS JOIN customers c;  --  This Join find the common column automatically and then apply the Join between table and every column will map with each column of second table
+
+
+SELECT
+	o.order_id,
+    c.first_name
+FROM orders o , customers c   -- This will produce the same result 
+
+    

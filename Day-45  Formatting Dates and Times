@@ -1,0 +1,8 @@
+SELECT DATE_FORMAT(NOW() , '%y'); -- it will return the last two digit of the year
+SELECT DATE_FORMAT(NOW() , '%Y'); -- it will return the 4 digit of the year
+SELECT DATE_FORMAT(NOW() , '%m %Y'); -- it will return the numeric value of monthmonth 
+SELECT DATE_FORMAT(NOW() , '%M %Y'); -- it will return the name of the month
+SELECT DATE_FORMAT(NOW() , '%M %d %Y'); -- it will return the full date
+
+SELECT time_format(NOW() , '%H:%i %p'); -- it will return the full time
+

@@ -1,0 +1,22 @@
+ USE sql_store;
+SELECT * 
+FROM orders
+JOIN customers
+	ON orders.customer_id = customers.customer_id; -- This query will apply the 
+   --  Inner join on the table customer and return the records
+   
+   
+SELECT order_id , first_name , last_name 
+FROM orders
+JOIN customers
+	ON orders.customer_id = customers.customer_id; -- This query will apply the 
+   --  Inner join on the table customer and return the mentioned fields in records
+   
+SELECT order_id , first_name , last_name , o.customer_id 
+FROM orders o
+JOIN customers c 
+	ON o.customer_id = c.customer_id; -- This query will apply the 
+   --  Inner join on the table customer and return the mentioned fields in records
+   -- and as I have assigned the alias name to the table name o and c
+   -- and if I didn't pass the o.customer_id in this query to fetch the field then it will return the error of ambiguity because customer_id columns exists in both table so we have to mentioned the table name
+   

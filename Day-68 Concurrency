@@ -1,0 +1,37 @@
+Concurrency in SQL refers to the ability of multiple transactions to access and manipulate the same data at the same time without interfering with each other. 
+It ensures that multiple users or processes can interact with the database efficiently while maintaining data consistency and integrity.
+
+Why Concurrency Matters?
+Performance: Multiple users can read and update the database simultaneously.
+Data Integrity: Ensures that concurrent transactions do not lead to data corruption or inconsistent states.
+Avoiding Conflicts: Prevents race conditions where two transactions try to modify the same data at the same time.
+
+Concurrency Issues
+Even with concurrency control, issues can occur:
+
+Issue	Description
+Dirty Read	Transaction reads uncommitted changes from another transaction.
+Non-Repeatable Read	A transaction sees different values for the same row if another transaction modifies it.
+Phantom Read	A transaction sees new rows appear due to inserts by other transactions.
+Lost Update	Two transactions modify the same row, and one update overwrites the other.
+
+
+Issues Solution
+Isolation Levels in SQL
+Isolation levels define how transactions interact with each other:
+
+Isolation Level	Prevents Dirty Reads	Prevents Non-Repeatable Reads	Prevents Phantom Reads
+READ UNCOMMITTED	❌ No	                    ❌ No	                     ❌ No
+READ COMMITTED	    ✅ Yes	                    ❌ No	                     ❌ No
+REPEATABLE READ	    ✅ Yes	                    ✅ Yes	                     ❌ No
+SERIALIZABLE	    ✅ Yes	                    ✅ Yes	                     ✅ Yes
+
+
+How to check the current transaction Isolation level in sql
+show variables like 'transaction_isolation';
+
+To set Isolation level for current session
+set session transaction isolation level serializable; 
+
+To set Isolation level for global session or for all session
+set global transaction isolation level serializable

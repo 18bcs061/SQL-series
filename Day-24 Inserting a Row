@@ -1,0 +1,10 @@
+-- How we insert the single row in the table
+SELECT * FROM customers;
+INSERT INTO customers(
+	first_name, 
+    last_name,
+    birth_date,
+    address,
+    city,
+    state)
+VALUES("John","Smith" , "2002-01-01" , "address" ,"city","ca")    

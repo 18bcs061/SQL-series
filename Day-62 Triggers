@@ -1,0 +1,14 @@
+Use sql_invoicing;
+-- WHENEVER A NEW RECORD WILL BE CREATE IN PAYMENT TABLE THEN THEIR AMOUNT WILL AUTOMATICALLY UPDATE IN INVOICE TABLE 
+DELIMITER $$
+
+CREATE TRIGGER payments_after_insert
+	AFTER INSERT ON payments
+    for each row
+BEGIN
+		UPDATE invoices
+        SET payment_total = payment_total + New.amount
+        WHERE invoice_id = New.invoice_id;
+END $$
+
+DELIMITER ;        

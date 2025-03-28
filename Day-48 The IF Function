@@ -1,0 +1,26 @@
+USE sql_store;
+-- if(expression , firstvalue , secondvalue)
+SELECT
+	order_id,
+    order_date,
+    if(
+		YEAR(order_date) = YEAR(NOW()),
+        'Active',
+        'Archived') AS category-- it will retun archived if the year is not same to current year 
+FROM orders;  
+
+
+-- Exercise
+	-- if product place  more then one time then put 'Once in frequency col other put 'Many order'' 
+SELECT 
+	p.product_id,
+    p.name,
+   count(product_id) AS orders,
+   if(count(product_id)>1 , 'Many order' , 'Once') as Frequency
+FROM products p
+JOIN order_items o
+	USING (product_id)
+    group by (product_id)       
+
+
+    

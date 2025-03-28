@@ -1,0 +1,22 @@
+USE sql_store;
+SELECT *
+from customers
+order by first_name; -- this query sort the data by first_name
+
+SELECT *
+from customers
+order by first_name desc; -- this query sort the data by first_name in reverse order or desc order
+
+SELECT *
+from customers
+order by state , first_name; -- this query sort the data by state first and then by first_name
+
+SELECT *
+from customers
+order by state desc, first_name desc; -- this query sort the data by state first and then by first_name
+
+SELECT first_name , last_name , 10 as points
+from customers
+order by points; -- this query sort the data by by alias name
+
+

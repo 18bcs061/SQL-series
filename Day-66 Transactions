@@ -1,0 +1,19 @@
+-- Transactions - Transaction is a block of SQL statement which reflect the changes on DB if every statement get passed otherwise it's roll back the changes
+-- Transactions work on ACID property
+
+-- A -  Atomicity
+-- Definition: A transaction is all or nothing—either the entire transaction is executed successfully, or none of it is applied.
+-- Example: Consider a bank transaction where $500 is transferred from Account A to Account B.
+
+-- C - Consistency
+-- Definition: A transaction must take the database from one consistent state to another, maintaining integrity constraints.
+-- Example: If a transaction deducts $500 from Account A, it must ensure Account B gets exactly $500—no data corruption or rule violations.
+-- Ensures that no account goes into negative balance, maintaining consistency.
+
+-- I - Isolation
+-- Definition: Transactions should execute independently—one transaction should not interfere with another running transaction.
+-- Example: Two users transferring money simultaneously should not affect each other's calculations.
+
+-- D - Durability
+-- Definition: Once a transaction is committed, its changes are permanently saved—even in case of system failure.
+-- Example: If the bank system crashes, the transfer of $500 should not be lost.

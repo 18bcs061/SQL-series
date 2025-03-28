@@ -1,0 +1,33 @@
+If we will set read committed then we will not get the uncommitted data so it removes the issue of uncommitted read
+
+
+use sql_store;
+set transaction isolation level read committed;
+select points
+from customers
+where customer_id = 1;
+
+use sql_store;
+start transaction;
+update customers
+set points = 20
+where customer_id = 1;
+commit;
+
+
+But this is now not handelling the Non-Repeatable Reads suppose
+use sql_store;
+set transaction isolation level read committed;
+select points from customers where customer_id = 1;
+select points from customers where customer_id = 1;
+
+use sql_store;
+start transaction;
+update customers
+set points = 30
+where customer_id = 1;
+commit;
+
+Now suppose first select statement works then it will return the 20 but after second transaction runs and then second statement of first transaction then it will return the 30
+so it's creating the issue of Non-Repeatable Reads
+

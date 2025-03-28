@@ -1,0 +1,7 @@
+USE sql_hr;
+SELECT * FROM employees;
+
+SELECT *
+FROM employees e
+LEFT JOIN employees m 
+	ON e.reports_to = m.employee_id;-- A self Outer join is used when a table needs to be joined with itself and need yo get all the records of first table. This is useful when dealing with hierarchical or relational data within the same table.

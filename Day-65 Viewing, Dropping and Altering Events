@@ -1,0 +1,18 @@
+-- we create the event to run anything on the time basis;
+
+
+SHOW EVENTS LIKE 'yearly%';
+DROP EVENT IF EXISTS yearly_delete_stale_audit_rows;
+
+DELIMITER $$ 
+
+ALTER EVENT yearly_delete_stale_audit_rows
+	on schedule
+    -- at '2019-05-01'
+    every 1 year starts '2019-05-01' ends '2029-01-01'
+do begin
+		delete from payment_audit
+        where action_date < now() - interval 1 year;
+end $$
+
+DELIMITER ;        

@@ -1,0 +1,2 @@
+This isolation level wait untill first transaction gets complete
+No parallelism here in this isolation

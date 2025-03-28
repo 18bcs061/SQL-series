@@ -1,0 +1,13 @@
+Data Type	               Type	                      Storage Size	             Precision	                            Syntax	                                    Use Case
+DECIMAL(m,d)	       Fixed-point	                    Varies by m	                Exact (up to 65 digits)	            DECIMAL(10,2)	                            Currency, accounting
+NUMERIC(m,d)	       Fixed-point	                    Same as DECIMAL	            Exact (alias of DECIMAL)	        NUMERIC(8,3)	                            Same as DECIMAL
+FLOAT(p)	           Floating-point	                4 bytes	                    Approx. 7 decimal digits	        FLOAT or FLOAT(24)	                        Scientific, speed-priority tasks
+DOUBLE	               Floating-point	                8 bytes	                    Approx. 15–17 digits	            DOUBLE or FLOAT(53)	                        High precision float calc.
+REAL	               Floating-point	                Depends on config	        Either alias for DOUBLE or FLOAT	Depends on config	                        Varies by SQL mode
+
+
+
+
+
+
+where m is the total number of digits

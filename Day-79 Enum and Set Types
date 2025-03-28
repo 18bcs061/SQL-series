@@ -1,0 +1,5 @@
+ENUM('small' , 'medium' , 'large')
+
+we can't set another value exept these value in column
+
+that's why not to prefer the use of enum in our DB

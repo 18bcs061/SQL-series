@@ -1,0 +1,7 @@
+USE sql_hr;
+SELECT * FROM employees;
+
+SELECT *
+FROM employees e
+JOIN employees m 
+	ON e.reports_to = m.employee_id;-- A self join is used when a table needs to be joined with itself. This is useful when dealing with hierarchical or relational data within the same table.

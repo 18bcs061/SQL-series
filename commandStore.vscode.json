@@ -1,0 +1,9 @@
+{
+  "commands": [
+    {
+      "id": "6cffbdcd-85f7-4fe3-a4c7-69d1dd23a6d1",
+      "name": "Show file and folder list",
+      "commandLine": "git status"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+-- WHERE Clause
+select * from Customers
+where points>3000
+
+-- These are the comparison operator which used in WHERE clause
+>
+>=
+<
+<=
+=
+
+-- both are same
+!=
+<>
+
+select * from Customers
+where state <> 'va' --(This can be upper case or in lowercase but output will be same)
+
+select *
+from Customers
+where birth_date > '1990-01-01' -- we can use the date comparison like this

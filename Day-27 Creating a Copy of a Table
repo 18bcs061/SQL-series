@@ -1,0 +1,27 @@
+-- How to copy the data from one table to another table
+Create table order_archived as -- In this example A new table will be create with name order_archived and all the orders table data will be copied in to this 
+SELECT * from orders;
+
+-- Now we already have a table and only copy the data from orders table
+INSERT INTO order_archived
+SELECT * FROM orders where order_date > '2019-01-01';
+
+-- But the main issue is if the orders table contains any primary key or any specific field then it will not come automatically in this table
+
+-- Exercise
+-- Copy the data in Invoice_archived table with following scanerio
+-- 1. Client name should be in the table
+-- 2. Only those results should be there whose payment details is not null
+
+USE sql_invoicing;
+CREATE TABLE invoice_archived as
+SELECT 
+		i.invoice_id,
+        i.number,
+        c.name as Client,
+        i.invoice_total,
+        i.payment_total
+FROM invoices i
+JOIN clients c
+USING (client_id)
+WHERE payment_date is not null

@@ -1,0 +1,10 @@
+SELECT 
+	c.customer_id,
+    c.first_name,
+    o.order_id
+FROM customers c -- Left Table 
+LEFT JOIN orders o    -- Right Table 
+	USING (customer_id)
+LEFT JOIN shippers sh
+	USING (shipper_id)
+ORDER BY c.customer_id;   -- we can simply remove the ON keyword and directly put the col name with keywork USING

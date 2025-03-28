@@ -1,0 +1,36 @@
+SELECT name 
+FROM shippers
+UNION
+SELECT first_name
+FROM customers -- Union basically merge the data of two tables but first table and below table should have the same number of column during fetch otherwise we will get the error
+
+
+
+Exercise
+-- SELECT the data from customers table if ponits is less than 2000 then type should be Bronze  , if points in betyween 2000 and 3000 then type should be Silver and If points in between 3000 and 4000 then type should be gold
+SELECT
+	customer_id,
+    first_name,
+    points,
+    "Bronze" as type
+from customers    
+WHERE points<2000
+UNION
+SELECT
+	customer_id,
+    first_name,
+    points,
+    "Silver" as type
+from customers       
+WHERE points Between 2000 AND 3000
+UNION
+SELECT
+	customer_id,
+    first_name,
+    points,
+    "Gold" as type
+from customers       
+WHERE points Between 3000 AND 4000
+
+
+        

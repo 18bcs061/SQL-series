@@ -1,0 +1,7 @@
+-- How we insert the single row in the table
+SELECT * FROM shippers;
+INSERT INTO shippers(
+	name)
+VALUES  ("Shipper 1"),
+		("Shipper2"),
+		("Shipper3")    

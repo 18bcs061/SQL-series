@@ -1,0 +1,22 @@
+SELECT
+	order_id,
+    CASE
+		WHEN YEAR(order_date) = YEAR(NOW()) THEN 'Active'
+        WHEN YEAR(order_date) = YEAR(NOW()) - 1 THEN 'Last Year'
+        WHEN YEAR(order_date) < YEAR(NOW()) - 1 THEN 'Archived'
+        ELSE 'Future'
+    END AS category
+FROM orders ;   
+
+-- Exercise
+-- If the points greater than 300 then put the category gold if greater than 2000 than put it in silver else bronze
+SELECT
+	concat(first_name ,' ', last_name) as customer,
+    points,
+    CASE
+		WHEN(points > 3000) then 'Gold'
+        WHEN(points > 2000)  then 'Silver'
+        else 'Bronze'
+    END as category    
+FROM customers
+order by points desc   

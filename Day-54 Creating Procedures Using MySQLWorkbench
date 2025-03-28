@@ -1,0 +1,5 @@
+-- when you will right click on stored procedure and create the process you will get code like this after apply
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_payments_method`()
+BEGIN
+   SELECT * FROM payment_methods;
+END

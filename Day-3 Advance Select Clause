@@ -1,0 +1,14 @@
+select
+	last_name,
+    first_name,
+    points,
+    points * 10 +100 as offer
+FROM customers    
+
+
+-- To get unique value of column we use the DISTINCT clause
+select distinct state
+FROM customers
+    
+
+    

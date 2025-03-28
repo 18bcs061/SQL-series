@@ -1,0 +1,17 @@
+USE sql_store;
+SELECT *
+FROM customers
+limit 3; -- this will return the 3 records 
+
+SELECT *
+FROM customers
+limit 6 , 3; -- this will return the 3 records but it will start from 7
+
+
+-- Exercise
+	-- Get the top three loyal customers
+    
+SELECT * 
+FROM customers
+ORDER BY points DESC
+LIMIT 3;    

@@ -1,0 +1,7 @@
+USE sql_store;
+SELECT 
+	order_id,
+    shipper_id,
+    -- ifnull(shipper_id , 'not assigned') as shipper -- it will put the not assigned wherever the shipper id is null in orders table 
+	coalesce(shipper_id , comments , 'not assigned') as shipper-- first it will check shipper_id if it's null then it will put comment if comment is null then  it will put not assigned 
+FROM orders

@@ -1,0 +1,7 @@
+SELECT
+	o.order_id,
+    c.first_name
+FROM orders o 
+NATURAL JOIN customers c  --  This Join find the common column automatically and then apply the JOIn between table but it's dangerous we shouldn't use this JOIN
+
+    

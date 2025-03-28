@@ -1,0 +1,9 @@
+SELECT NOW() , current_date() , current_time() , current_timestamp();
+SELECT year(NOW());
+SELECT MONTH(NOW());
+SELECT DAY(NOW());
+SELECT HOUR(NOW());
+SELECT DAYNAME(NOW());
+SELECT MONTHNAME(NOW());
+SELECT EXTRACT(DAY FROM NOW())
+

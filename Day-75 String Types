@@ -1,0 +1,7 @@
+CHAR(X)  fixed-length
+VARCHAR(X) max: 65,535 charcter (~64 KB)
+MEDIUMTEXT max: 16MB
+LONGTEXT   max: 4GB
+
+TINYTEXT   max: 255 bytes
+TEXT       max: (~64 KB)

@@ -1,0 +1,16 @@
+-- suppose I wrote this first transaction and it's get complete before second one got complete so it will read the uncommit changes or in case ig second transaction
+got rollback with any reason then business will get wrong decision on the basis of uncommitted changes read
+
+
+use sql_store;
+set transaction isolation level read uncommitted;
+select points
+from customers
+where customer_id = 1;
+
+use sql_store;
+start transaction;
+update customers
+set points = 20
+where customer_id = 1;
+commit;

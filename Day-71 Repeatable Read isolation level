@@ -1,0 +1,9 @@
+Repeatable Reads resolvs the problem that we faced in the last scanerio
+
+But it does not solve the  Phantom Reads issue
+suppose I am getting the data of customer whose state is 'VA' but I didn't commit the transaction
+but at the same time second transaction updating the location for another customer to same state 'VA' 
+And if I came to first transaction and then executes the same select statement then will not still get the updated result
+
+
+To resolve this issue we need serializable isolation

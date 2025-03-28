@@ -1,0 +1,29 @@
+select * from Customers
+where birth_date > '1990-01-01' or points > 1000 and state = 'VA';
+
+-- order of  logical order 
+-- AND
+-- OR
+
+-- so the query will look like this during the execution
+SELECT * 
+FROM Customers
+WHERE (birth_date > '1990-01-01')
+   OR (points > 1000 AND state = 'VA');
+
+
+ -- now suppose I added the NOT before the condition
+select * from Customers
+where NOT (birth_date > '1990-01-01' or points > 1000 and state = 'VA');
+
+-- then for the sake of understanding we can execute this query like this
+select * from Customers
+where birth_date <= '1990-01-01' and points <= 1000 or state != 'VA';
+
+
+-- exercise
+--  fetch the data from order_items table where orderr is 6 and total price is greater than 30 
+SELECT * FROM order_items
+WHERE order_id = 6 and quantity * unit_price > 30
+ 
+ 

@@ -1,0 +1,44 @@
+SELECT 
+	c.customer_id,
+    c.first_name,
+    o.order_id
+FROM customers c -- Left Table 
+JOIN orders o    -- Right Table 
+	ON c.customer_id = o.customer_id
+ORDER BY c.customer_id;    
+
+
+--  The abobe query return only the records if customner id are equal but if not then it will not return any value
+
+-- Now Outer Join comes into the picture
+-- Left Outer Join , This Join returns the all records of left table or first table and condition based records from right table or second table
+SELECT 
+	c.customer_id,
+    c.first_name,
+    o.order_id
+FROM customers c -- Left Table 
+LEFT JOIN orders o    -- Right Table 
+	ON c.customer_id = o.customer_id
+ORDER BY c.customer_id; 
+-- Right Outer Join ,This Join returns the all records of right table or second table and condition based records from left table or first table
+SELECT 
+	c.customer_id,
+    c.first_name,
+    o.order_id
+FROM orders o -- Left Table 
+RIGHT JOIN customers c    -- Right Table 
+	ON c.customer_id = o.customer_id
+ORDER BY c.customer_id;
+
+
+--  Exercise
+-- Perform Outer Join On Product and Order_Item  table
+
+SELECT 
+	p.product_id,
+    p.name,
+    oi.quantity
+FROM products p
+LEFT JOIN order_items oi	
+		ON p.product_id = oi.product_id
+    

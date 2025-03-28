@@ -1,0 +1,14 @@
+It represents the entities and their relationship not the typer of attributes
+
+We have two ways to represent the conceptual model
+    1. Entity Relationship (ER)
+    2. UML
+
+These are few online tools to draw the model
+    Microsoft Visio
+    draw.io
+    LucidCharts    
+
+
+Logical Models contains type of attribute and their relationship in well manner
+

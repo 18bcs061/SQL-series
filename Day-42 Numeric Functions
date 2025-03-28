@@ -1,0 +1,6 @@
+SELECT ROUND(5.2 ,3);
+SELECT truncate(5.25435 ,3); --  It will completely remove the other decimal digit after 3 digit from decimal
+SELECT ceiling(5.3);	-- Return the smallest integer value not less than the argument
+SELECT FLOOR(5.6);  -- Return the largest integer value not greater than the argument
+SELECT abs(-34); 	-- 	Return the absolute value
+SELECT rand(); -- Return a random floating-point value

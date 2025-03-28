@@ -1,0 +1,18 @@
+USE sql_invoicing;
+-- Both the query retuns the same results but the difference is
+-- In query should not use when we have 1000 or more records in the table
+-- It will decrease the performance of execution
+SELECT *
+FROM clients
+WHERE client_id IN (
+	SELECT distinct client_id
+    FROM invoices
+);    
+ 
+SELECT *
+FROM clients c 
+WHERE exists (
+	SELECT client_id
+    FROM invoices
+    WHERE client_id = c.client_id
+) 

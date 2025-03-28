@@ -1,0 +1,11 @@
+SELECT * FROM sql_invoicing.invoices WHERE client_id=5;
+use SQL_invoicing;
+DELETE FROM invoices
+WHERE invoice_id=1;
+
+DELETE FROM invoices
+WHERE client_id IN (
+SELECT *
+FROM clients
+WHERE name = 'Topiclounge'
+)

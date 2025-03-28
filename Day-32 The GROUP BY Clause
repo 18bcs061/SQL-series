@@ -1,0 +1,15 @@
+USE sql_invoicing;
+
+SELECT count(*) , client_id
+FROM invoices
+group by client_id;
+
+
+-- How to perform GROUP BY on more than one table 
+SELECT
+	state,
+    city,
+    SUM(invoice_total) as total_sales
+FROM invoices i
+join clients USING (client_id)
+group by state , city -- Here it will sum up the records oon uniqueness of state and city

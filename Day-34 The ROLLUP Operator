@@ -1,0 +1,8 @@
+SELECT 
+	state,
+    city,
+    SUM(invoice_total) AS total_sales
+FROM invoices i
+JOIN clients c USING (client_id)
+group by state , city with rollup -- This will first group the records by state and city and after every group it will provide the sum of state , city and then provide the overall
+-- sum of state , city

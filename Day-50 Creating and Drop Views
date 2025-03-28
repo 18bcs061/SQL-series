@@ -1,0 +1,32 @@
+USE sql_invoicing;
+-- tO CREATE THE VIEW OF THIS QUERY WE HAVE TO WRITE THE SYNTAX HERE
+CREATE VIEW sales_by_client AS
+SELECT 
+	c.client_id,
+    c.name,
+    SUM(invoice_total) AS total_sale
+FROM clients c 
+JOIN invoices i USING (client_id) 
+GROUP BY client_id , name; 
+
+-- Now we can use the view sales_by_client anywhere in our code we can apply the filter we can apply the JOIN anything which we can do on table
+-- View does not create aby table but it's treat like a virtual table
+
+-- Perform sorting on View
+SELECT *
+FROM  sales_by_client
+ORDER BY total_sale DESC;
+
+-- Perform filter
+SELECT *
+FROM  sales_by_client
+WHERE total_sale >50;
+
+-- Apply Join
+SELECT *
+FROM  sales_by_client
+JOIN clients USING (client_id)
+
+-- If we want to delete the view then
+DROP VIEW sales_by_client
+

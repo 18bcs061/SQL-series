@@ -1,0 +1,21 @@
+USE sql_store;
+-- Find products that have never been ordered
+
+SELECT *
+FROM products
+WHERE product_id NOT IN (
+	SELECT distinct product_id
+    FROM order_items
+);
+
+-- Exercise
+-- 	Find clients without invoices
+USE sql_invoicing;
+SELECT *
+FROM clients
+WHERE client_id NOT IN  (
+	SELECT DISTINCT client_id
+    FROM invoices
+)
+
+-- We can perform the same work using JOIN but subquery are more readable in nature

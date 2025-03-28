@@ -1,0 +1,37 @@
+USE sql_store;
+SELECT *
+from customers
+WHERE last_name regexp '[a-h]e';
+
+-- ^ set of charcter should come at beginning of lastname ex - ^ab
+-- $ set of charcter should come at end of lastname ex - ab$
+-- | logical or ex- 'abc|def|efg' lastname should either contains any of them
+-- [abcd]   charcter should be start by these set of charcter ex - [abc]e so here value can be ae be ce and de
+-- [a-f] charcter should be start by these range of charcter ex - [abcef]e so here value can be ae be ce and de
+
+
+-- Exercise : Get the customers whose
+	-- first names  are ELKA or AMBUR
+    -- last names end with EY or ON
+    -- last names start with MY or contains SE
+    -- last names contains B followed by R or U 
+    
+-- first names  are ELKA or AMBUR    
+SELECT *
+FROM customers
+WHERE  first_name regexp 'ELKA|AMBUR';   
+
+-- last names end with EY or ON
+SELECT *
+FROM customers
+WHERE  last_name regexp 'EY$|ON$';
+
+-- last names start with MY or contains SE
+SELECT *
+FROM customers
+WHERE  last_name regexp '^MY|SE';
+
+-- last names contains B followed by R or U 
+SELECT *
+FROM customers
+WHERE  last_name regexp 'B[RU]'

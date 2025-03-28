@@ -1,0 +1,22 @@
+SELECT * FROM sql_invoicing.invoices;
+
+UPDATE invoices
+SET payment_total = 10,
+payment_date = due_date
+WHERE invoice_id in (1,2,3);
+
+
+
+-- Exercise
+	-- Give any customers born before 1990
+    -- 50 extra points
+    
+USE sql_store;
+SELECT * FROM customers;
+UPDATE customers 
+SET points = points+50
+WHERE birth_date < '1990-01-01';
+
+SELECT * FROM customers WHERE birth_date < '1990-01-01';
+
+-- If this shows the error of safe update then goto edit => preference and script editor uncheck the checkbox then save after that close the editor and reconnect
