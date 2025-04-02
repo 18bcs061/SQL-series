@@ -1,0 +1,14 @@
+-- Now here we will add privileges for two scanerio
+-- web/desktop application
+CREATE USER moon_app identified by '1234';
+GRANT SELECT , INSERT , UPDATE , DELETE , EXECUTE
+ON sql_store.* -- here * for all tables or we can specify any sdingle table name 
+TO moon_app;
+-- so with the help of this when any user try to connect with this user name and password then they will only see the sql_store database there 
+
+-- Admin 
+GRANT ALL
+ON *.*
+TO john
+
+ 

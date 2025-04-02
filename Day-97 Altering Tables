@@ -1,0 +1,5 @@
+ALTER TABLE customers
+    ADD last_name varchar(50) not null AFTER first_name,
+    ADD city  varchar(50) not null,
+    MODIFY COLUMN first_name varchar(55) default '',
+    DROP points

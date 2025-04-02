@@ -1,0 +1,2 @@
+-- In this case index will set to first 20 character of the lastname 
+create index idx_lastname on customers (last_name(20));

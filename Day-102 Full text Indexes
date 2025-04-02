@@ -1,0 +1,12 @@
+
+CREATE fulltext index idx_title_body ON posts (title , body);
+
+SELECT *, match(title , body) AGAINST('react redux') -- This  will show the relevance score of tghe search like google search
+FROM posts
+WHERE MATCH(title , body) against('react redux'); -- and here this will search in both the column for the string react redux either anything found
+
+CREATE fulltext index idx_title_body ON posts (title , body);
+
+SELECT *, match(title , body) AGAINST('react redux')
+FROM posts
+WHERE MATCH(title , body) against('react -redux +form' IN boolean mode)-- this will exclude the redux and search for react and form I mean both 

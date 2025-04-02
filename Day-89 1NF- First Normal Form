@@ -1,0 +1,5 @@
+Each cell should have a single value and we cannot have repeated columns like tag1 tag2 and so on
+So in our database we have to create the new table with name tags because in the current course table a single
+cell tags will have the multiple value and may be repeate more than once
+
+Because suppose in future if we want to add hyphen in the tags then we have to modified all those rows which contains these tags that's why we have to create separate table for tags and it will maintain the 1NF

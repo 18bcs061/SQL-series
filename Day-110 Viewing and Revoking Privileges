@@ -1,0 +1,10 @@
+SHOW grants FOR moon_app;
+
+show grants; -- to see the permission for the current user 
+
+-- how to revoke permission from user , in the below code we are removing the create view permission
+REVOKE CREATE VIEW
+ON sql_store.*
+FROM moon_app; 
+
+ 

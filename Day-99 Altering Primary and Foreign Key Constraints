@@ -1,0 +1,19 @@
+-- 1. Drop the existing primary key (if needed)
+ALTER TABLE orders
+DROP PRIMARY KEY;
+
+-- 2. Add a new primary key
+ALTER TABLE orders
+ADD PRIMARY KEY (order_id);
+
+-- 3. Drop existing foreign key
+ALTER TABLE orders
+DROP FOREIGN KEY fk_orders_customers;
+
+-- 4. Add the new/revised foreign key
+ALTER TABLE orders
+ADD CONSTRAINT fk_orders_customers
+FOREIGN KEY (customer_id)
+REFERENCES customers (customer_id)
+ON DELETE NO ACTION
+ON UPDATE CASCADE;

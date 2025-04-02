@@ -1,0 +1,11 @@
+use sql_store;
+explain SELECT customer_id from customers where state in ('VA');
+
+create index idx_state on customers (state)
+
+-- Indexes basically increase the cost of the database becuase it;s usually store the data in memory
+-- We should write index only on that column where the query are complex and tables
+-- contains the lot of data 
+
+-- To View the indexes
+SHOW INDEXES IN customers 

@@ -1,0 +1,12 @@
+use sql_store;
+SHOW indexes IN customers;
+
+EXPLAIN SELECT customer_id from customers
+where state ='CA' and points >1000;
+
+-- In the above scanerio it will exectute the query and fetch the state result according to the index but for the points it will
+-- search in all rows no matter we have indexing on points column or not that's why composite indexes comes into the picture
+
+CREATE INDEX idx_state_points on customers (state , points);-- column orders matter here 
+explain select customer_id from customers 
+where state = 'CA' and points > 1000;  

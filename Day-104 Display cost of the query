@@ -1,0 +1,4 @@
+show status;
+show status like 'last_query_cost';
+
+-- we shoulds always use the sorting using index column which would alway's reduce the cost

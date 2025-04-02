@@ -1,0 +1,4 @@
+1. Table should be in 2 NF
+2 . A column in a table should not be derived from other column
+
+example - name and last name describe the fullname so the below example in not in 3 NF
